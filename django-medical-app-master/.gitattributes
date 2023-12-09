@@ -1,0 +1,14 @@
+# Исключить все файлы как vendored
+* linguist-vendored
+
+# Но рассматривать .py файлы как разработанные, а не сторонние
+*.py linguist-vendored=false
+
+# Также рассматривать HTML шаблоны как основной код
+*.html linguist-vendored=false
+*.css linguist-vendored=false
+*.js linguist-vendored=false
+
+# Исключить из лингвистического анализа файлы сборок
+/static/ linguist-vendored
+*.min.js linguist-vendored
