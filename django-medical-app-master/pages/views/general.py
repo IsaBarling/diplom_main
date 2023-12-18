@@ -1,6 +1,6 @@
 
 from django.views.generic import ListView, TemplateView
-from pages.models import MedicalInfo
+from pages.models import MedicalRecord
 
 
 class HomePageView(TemplateView):
