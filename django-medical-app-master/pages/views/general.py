@@ -8,5 +8,5 @@ class HomePageView(TemplateView):
 
 
 class StatPageView(ListView):
-    model = MedicalInfo
+    model = MedicalRecord
     template_name = 'pages/stat.html'
