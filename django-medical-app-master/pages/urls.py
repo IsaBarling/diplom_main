@@ -2,7 +2,7 @@ from django.urls import path
 from pages.views.general import StatPageView, HomePageView
 from pages.views.patients import PatientSignUpView, PatientLoginView, MedicalRecordCreateView
 from pages.views.practitioner import (
-    login_page as practitioner_login_page,
+    DoctorLoginView as practitioner_login_page,
     logout_page as practitioner_logout_page,
     signup_page as practitioner_signup_page,
     show_doc_info
