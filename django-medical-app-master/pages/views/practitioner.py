@@ -1,24 +1,24 @@
 from django.views.generic import CreateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView  
+from django.shortcuts import redirect  
+from django.contrib.auth import login  
+from django.db.models import Q  
 
-from pages.models import Patient, Disease, MedicalRecord
-
-
+from pages.models import Patient, Disease, MedicalRecord, Doctor  
 
 class DoctorSignupView(CreateView):
-    model = Doctor
+    model = Doctor  # Убедись, что модель Doctor определена
     fields = ['name', 'email', 'password']
     template_name = 'doctor_signup.html'
 
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')
-
+        return redirect('home')  
 
 class DoctorLoginView(LoginView):
     template_name = 'doctor_login.html'
-
 
 class PatientListView(LoginRequiredMixin, ListView):
     model = MedicalRecord
