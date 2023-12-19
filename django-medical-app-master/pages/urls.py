@@ -17,6 +17,8 @@ urlpatterns = [
     path('dashboard/', show_doc_info, name='practitioner_home'),
     path('accounts/login/', PatientLoginView.as_view(), name='patient_login'),
     path('accounts/signup/', PatientSignUpView.as_view(), name='patient_signup'),
+    path('accounts/p/login/', DoctorLoginView.as_view(), name='practitioner_login'),
+    path('accounts/p/signup/', DoctorSignupView.as_view(), name='practitioner_signup'),
     path('accounts/p/logout/', DoctorLogoutView.as_view(), name='practitioner_logout'),
 ]
 
