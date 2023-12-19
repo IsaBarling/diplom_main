@@ -1,8 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView  
 from django.views.generic import CreateView
+from django.shortcuts import redirect  
+from django.contrib.auth import login  
 
 from pages.models import Patient, Disease, MedicalRecord
-
 
 class PatientSignUpView(CreateView):
     model = Patient
@@ -14,10 +16,8 @@ class PatientSignUpView(CreateView):
         login(self.request, user)
         return redirect('homepage')
 
-
 class PatientLoginView(LoginView):
     template_name = 'login.html'
-
 
 class MedicalRecordCreateView(LoginRequiredMixin, CreateView):
     model = MedicalRecord
