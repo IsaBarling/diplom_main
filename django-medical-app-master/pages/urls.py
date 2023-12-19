@@ -5,8 +5,7 @@ from pages.views.practitioner import (
     DoctorLoginView,
     DoctorLogoutView,
     DoctorSignupView,
-    show_doc_info
-)
+    )
 
 app_name = 'pages'
 
