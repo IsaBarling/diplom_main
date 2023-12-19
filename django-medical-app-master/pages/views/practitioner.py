@@ -1,6 +1,6 @@
 from django.views.generic import CreateView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView  
+from django.contrib.auth.views import LoginView, LogoutView  
 from django.shortcuts import redirect  
 from django.contrib.auth import login  
 from django.db.models import Q  
@@ -19,6 +19,9 @@ class DoctorSignupView(CreateView):
 
 class DoctorLoginView(LoginView):
     template_name = 'doctor_login.html'
+
+class DoctorLogoutView(LogoutView):
+    next_page = 'home' 
 
 class PatientListView(LoginRequiredMixin, ListView):
     model = MedicalRecord
