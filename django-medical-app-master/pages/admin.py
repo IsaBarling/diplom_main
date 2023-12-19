@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Patient, Doctor
+from .models import Patient, Doctor, Disease, MedicalRecord
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
