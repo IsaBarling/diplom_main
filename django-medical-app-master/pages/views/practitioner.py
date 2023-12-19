@@ -10,7 +10,7 @@ from pages.models import Patient, Disease, MedicalRecord, Doctor
 class DoctorSignupView(CreateView):
     model = Doctor  # Убедись, что модель Doctor определена
     fields = ['name', 'email', 'password']
-    template_name = 'doctor_signup.html'
+    template_name = 'accounts/practitioner/doctor_signup.html'
 
     def form_valid(self, form):
         user = form.save()
@@ -18,7 +18,7 @@ class DoctorSignupView(CreateView):
         return redirect('home')  
 
 class DoctorLoginView(LoginView):
-    template_name = 'doctor_login.html'
+    template_name = 'accounts/practitioner/doctor_login.html'
 
 class DoctorLogoutView(LogoutView):
     next_page = 'home' 
