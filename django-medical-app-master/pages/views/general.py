@@ -4,9 +4,9 @@ from pages.models import MedicalRecord
 
 
 class HomePageView(TemplateView):
-    template_name = 'templates/landing_page.html'
+    template_name = 'landing_page.html'
 
 
 class StatPageView(ListView):
     model = MedicalRecord
-    template_name = 'templates/stat.html'
+    template_name = 'stat.html'
