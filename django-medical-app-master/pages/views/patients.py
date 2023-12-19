@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView
 
-from ..models import Patient, Disease, MedicalRecord
+from pages.models import Patient, Disease, MedicalRecord
 
 
 class PatientSignUpView(CreateView):
