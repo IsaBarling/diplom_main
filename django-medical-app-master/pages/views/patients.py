@@ -3,8 +3,7 @@ from django.contrib.auth.views import LoginView
 from django.views.generic import CreateView
 from django.shortcuts import redirect  
 from django.contrib.auth import login  
-from django.shortcuts import render
-from pages.models import Patient, Disease, MedicalRecord
+from pages.models import Patient, MedicalRecord
 
 class PatientSignUpView(CreateView):
     model = Patient
@@ -18,10 +17,6 @@ class PatientSignUpView(CreateView):
 
 class PatientLoginView(LoginView):
     template_name = 'login.html'
-    
-    def show_login(request):
-        return render(request, 'login.html') 
-    
 
 class MedicalRecordCreateView(LoginRequiredMixin, CreateView):
     model = MedicalRecord
@@ -31,3 +26,4 @@ class MedicalRecordCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.patient = self.request.user
         return super().form_valid(form)
+
